@@ -17,7 +17,7 @@ function GitHubUser({ login }) {
       {data.length == 2 ? (
         <div>{data.message}</div>
       ) : (
-        <div className='row-span-2 text-2xl'>
+        <div className='mx-5 col-span-2 md:col-span-1 md:row-span-2 text-2xl justify-self-center md:justify-self-start'>
           <img
             className='rounded-full'
             src={data.avatar_url}

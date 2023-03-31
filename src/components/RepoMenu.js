@@ -12,7 +12,7 @@ function RepoMenu({ login, repositories, onSelect }) {
 
   return (
     <>
-      <div className='mx-auto w-full text-center text-xl'>
+      <div className='mx-5 md:mx-auto md:w-full text-center text-xl col-span-2 md:col-span-1'>
         <p className=''>Repository: {name}</p>
         <div className='flex justify-between'>
           <button className='p-4 border rounded-md hover:bg-purple-700' onClick={previous}>

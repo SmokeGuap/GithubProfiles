@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='min-h-screen bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900 text-white'>
       <SearchForm setLogin={setLogin} />
-      <div className='container mx-auto grid grid-cols-2 gap-x-5'>
+      <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 '>
         {login && <GitHubUser login={login} />}
         {login && <UserRepos login={login} onSelect={setRepo} />}
       </div>

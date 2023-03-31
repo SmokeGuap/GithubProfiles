@@ -25,7 +25,7 @@ export default function RepositoryReadme({ login, repo }) {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className='my-5 col-start-2 border rounded-md px-4 py-4'>
+    <div className='mr-5 md:mr-0 my-5 col-start-2 border rounded-md px-4 py-4'>
       <ReactMarkdown className='' children={markdown} />
     </div>
   );
