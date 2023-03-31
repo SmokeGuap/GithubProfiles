@@ -1,28 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import GitHubUser from './components/GitHubUser';
-import UserRepositories from './components/UserRepos.js';
+import SearchForm from './components/SearchForm';
+import UserRepos from './components/UserRepos.js';
 
 function App() {
   const [login, setLogin] = useState('');
   const [repo, setRepo] = useState('');
-  const inputRef = useRef(null);
-
-  const handleSearch = () => {
-    setLogin(inputRef.current.value);
-  };
 
   return (
-    <div>
-      <input ref={inputRef}></input>
-      <button onClick={handleSearch}>Set</button>
-      {login && <GitHubUser login={login} />}
-      {login && (
-        <UserRepositories
-          login={login}
-          selectedRepo={repo}
-          onSelect={setRepo}
-        />
-      )}
+    <div className='min-h-screen bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900 text-white'>
+      <SearchForm setLogin={setLogin} />
+      <div className='container mx-auto grid grid-cols-2 gap-x-5'>
+        {login && <GitHubUser login={login} />}
+        {login && <UserRepos login={login} onSelect={setRepo} />}
+      </div>
     </div>
   );
 }

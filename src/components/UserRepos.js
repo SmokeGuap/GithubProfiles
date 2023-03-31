@@ -2,7 +2,7 @@ import React from 'react';
 import useFetch from '../hooks/useFetch';
 import RepoMenu from './RepoMenu';
 
-function UserRepositories({ login, selectedRepo, onSelect }) {
+function UserRepos({ login, onSelect }) {
   const { data, loading, error } = useFetch(
     `https://api.github.com/users/${login}/repos`
   );
@@ -11,13 +11,6 @@ function UserRepositories({ login, selectedRepo, onSelect }) {
   if (error) {
     alert(error);
   }
-  return (
-    <RepoMenu
-      login={login}
-      repositories={data}
-      selectedRepo={selectedRepo}
-      onSelect={onSelect}
-    />
-  );
+  return <RepoMenu login={login} repositories={data} onSelect={onSelect} />;
 }
-export default UserRepositories;
+export default UserRepos;
