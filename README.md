@@ -7,6 +7,7 @@ The ability to view repositories of users and inspect file `Readme.md` using Git
 - React
 - Custom Hooks
 - React-markdown
+- Tailwind CSS
 
 ## How to run
 
